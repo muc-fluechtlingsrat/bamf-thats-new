@@ -10,15 +10,15 @@ function sendMail($urlsString) {
 
     $body = "Hi 👋
 
-The BAMF Checker found the following new URLs:
+BAMF: Thats's new found the following new URLs:
 
 $urlsString
 
 Best regards
-BAMF Checker
+BAMF: That's new
 ";
 
-    $message = Swift_Message::newInstance('BAMF Checker has news')
+    $message = Swift_Message::newInstance('BAMF: Thats\'s new has news')
         ->setFrom(array(sender_address => sender_name))
         ->setTo(explode(',', mail_reveiver))
         ->setBody($body, 'text/plain');
@@ -26,9 +26,9 @@ BAMF Checker
     $isMailSent = $mailer->send($message);
 
     if($isMailSent) {
-        print "Mail(s) sent!\n";
+        print "\n\nMail(s) sent!\n";
     }
     else {
-        print "Mail submission failed :(\n";
+        print "\n\nMail submission failed :(\n";
     }
 }
