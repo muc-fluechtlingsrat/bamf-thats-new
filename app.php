@@ -4,6 +4,7 @@ ini_set('display_errors', 1);
 require 'vendor/autoload.php';
 require 'config.php';
 require 'sendMail.php';
+require 'normalizeUrl.php';
 
 $compareFile = './compare.txt';
 if(!file_exists($compareFile)) {
@@ -24,12 +25,12 @@ $linkNodes = $html->find('.Publication');
 
 $downloadUrls = '';
 foreach ($linkNodes as $linkNode) {
-    $downloadUrls .= $linkNode->href . PHP_EOL;
+    $downloadUrls .= normalizeUrl($linkNode->href . PHP_EOL);
 }
 
 //URLs changed!
-if($downloadUrls !== $compareFileContents) {
-    echo "URLs changed!\n$downloadUrls";
+if(trim($downloadUrls) !== trim($compareFileContents)) {
+    echo "URLs changed!\n\n$downloadUrls";
     sendMail($downloadUrls);
     file_put_contents($compareFile, $downloadUrls);
 }
