@@ -19,7 +19,7 @@ if(!is_writable($compareFile)) {
 }
 $compareFileContents = file_get_contents($compareFile);
 
-$uri = 'http://www.bamf.de/DE/Infothek/Statistiken/Asylzahlen/asylzahlen-node.html';
+$uri = 'http://www.bamf.de/DE/Infothek/Statistiken/Asylzahlen/Asylgesch%C3%A4ftsstatistik/asylgeschaeftsstatistik-node.html';
 $html = file_get_html($uri);
 $linkNodes = $html->find('.Publication');
 
