@@ -1,0 +1,14 @@
+{
+    "name": "n4r/bamf-whats-new",
+    "type": "project",
+    "require": {
+        "swiftmailer/swiftmailer": "^5.4",
+        "shark/simple_html_dom": "@dev"
+    },
+    "authors": [
+        {
+            "name": "Stefan Dietz",
+            "email": "dev@stefan-dietz.eu"
+        }
+    ]
+}
