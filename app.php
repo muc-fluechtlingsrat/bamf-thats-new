@@ -1,12 +1,12 @@
 <?php
 ini_set('display_errors', 1);
 
-require 'vendor/autoload.php';
-require 'config.php';
-require 'sendMail.php';
-require 'normalizeUrl.php';
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/config.php';
+require __DIR__ . '/sendMail.php';
+require __DIR__ . '/normalizeUrl.php';
 
-$compareFile = './compare.txt';
+$compareFile = __DIR__ . '/compare.txt';
 if(!file_exists($compareFile)) {
     $isFileCreated = file_put_contents($compareFile, '');
 
